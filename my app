@@ -1,0 +1,28 @@
+def chatbot_response(user_input):
+    user_input = user_input.lower()
+
+    # Predefined simple responses
+    responses = {
+        "hi": "Hello! How can I help you?",
+        "hello": "Hi there! What can I do for you?",
+        "how are you": "I'm just a bot, but I'm doing great!",
+        "bye": "Goodbye! Have a nice day!",
+        "what is your name": "I'm ChatBuddy, your simple chatbot.",
+        "help": "You can say hi, ask my name, or say bye!"
+    }
+
+    # Search for a matching response
+    return responses.get(user_input, "Sorry, I don't understand that.")
+
+# Main loop to interact with the bot
+print("Welcome to ChatBuddy! (type 'bye' to exit)")
+
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "bye":
+        print("ChatBuddy: Goodbye!")
+        break
+
+    reply = chatbot_response(user_input)
+    print("ChatBuddy:", reply)
+
